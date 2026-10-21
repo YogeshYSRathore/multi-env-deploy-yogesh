@@ -53,7 +53,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 400 ~/.ssh/deploy_key
-          ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts 2>/dev/null
+          ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts
       
           # Deploy files via SCP
           scp -i ~/.ssh/deploy_key -r index.html style.css app.js \
